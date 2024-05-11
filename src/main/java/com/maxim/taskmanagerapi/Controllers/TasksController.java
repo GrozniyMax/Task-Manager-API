@@ -2,22 +2,57 @@ package com.maxim.taskmanagerapi.Controllers;
 
 
 import com.maxim.taskmanagerapi.TaskManagers.TaskManager;
-import com.maxim.taskmanagerapi.Tasks.SimpleTask;
+import com.maxim.taskmanagerapi.Tasks.ComplexTask;
 import com.maxim.taskmanagerapi.Tasks.Task;
+
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
+
 @RestController
-@RequestMapping("/courses")
+@RequestMapping("/tasks")
 public class TasksController {
 
     @Autowired
     TaskManager taskManager;
 
+    @GetMapping("/")
+    public List<Task> getTasks() {
+        return taskManager.getTasks();
+    }
 
     @GetMapping("/{id}")
     public @ResponseBody Task getCourseById(@PathVariable Long id){
         System.out.println("SUIIII");
-        return new SimpleTask("SUIIIII");
+        return taskManager.getTaskByID(id);
     }
+
+    @PostMapping("/")
+    public void addTask(@RequestBody Task task){
+        taskManager.add(task);
+    }
+
+    @PostMapping("/{id}")
+    public void updateTask(@PathVariable Long id, @RequestBody Task task){
+        taskManager.update(id,task);
+    }
+
+    @PostMapping("/{id}/subtasks")
+    public void addSubTask(@PathVariable Long id, @RequestBody Task task){
+         ((ComplexTask) taskManager.getTaskByID(id)).addSubTask(task);
+    }
+
+    @GetMapping("/{id}/subtasks")
+    public Map<Long,List<Task>> getSubTasks(@PathVariable Long id){
+        return ((ComplexTask) taskManager.getTaskByID(id)).getSubTasksByLayer();
+    }
+
+    @ExceptionHandler(ClassCastException.class)
+    public @ResponseBody String handleClassCastException(ClassCastException e){
+        return e.getMessage();
+    }
+
 }

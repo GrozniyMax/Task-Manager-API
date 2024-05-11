@@ -1,7 +1,5 @@
 package com.maxim.taskmanagerapi.Tasks;
 
-import com.maxim.taskmanagerapi.Tasks.Task;
-
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -16,8 +14,6 @@ public class ComplexTask extends SimpleTask {
 
     private HashMap<Long ,Task> tasks;
 
-
-
     public ComplexTask(String name) {
         super(name);
     }
@@ -26,7 +22,11 @@ public class ComplexTask extends SimpleTask {
      * Adds new sub task
      * @param task given task
      */
-    public void addTask(Task task) {
+    public void addSubTask(Task task) {
+
+
+
+
         if (!tasks.containsKey(this.getId())) {
             tasks.put(task.getId(),task);
         }
@@ -65,7 +65,7 @@ public class ComplexTask extends SimpleTask {
     /**Returns a map of subtacks grouped by layer
      * @return Map[layer index, tasks]
      */
-    public Map<Long,List<Task>> getTasksByLayers() {
+    public Map<Long,List<Task>> getSubTasksByLayer() {
         Map<Long,List<Task>> tasksByLayers = new HashMap<>();
         Queue<ComplexTask> toVisit = new LinkedList<>();
         toVisit.add(this);
@@ -80,6 +80,6 @@ public class ComplexTask extends SimpleTask {
             }
             tasksByLayers.put(layerId,layer);
         }
-        return getTasksByLayers();
+        return getSubTasksByLayer();
     }
 }
