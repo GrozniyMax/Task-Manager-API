@@ -1,4 +1,4 @@
-package com.maxim.taskmanagerapi.Tasks;
+package com.maxim.taskmanagerapi.TaskLogic.Tasks;
 
 import java.util.*;
 import java.util.stream.Stream;

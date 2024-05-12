@@ -1,11 +1,10 @@
 package com.maxim.taskmanagerapi.Controllers;
 
 
-import com.maxim.taskmanagerapi.TaskManagers.TaskManager;
-import com.maxim.taskmanagerapi.Tasks.ComplexTask;
-import com.maxim.taskmanagerapi.Tasks.Task;
+import com.maxim.taskmanagerapi.TaskLogic.TaskManagers.TaskManager;
+import com.maxim.taskmanagerapi.TaskLogic.Tasks.ComplexTask;
+import com.maxim.taskmanagerapi.TaskLogic.Tasks.Task;
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

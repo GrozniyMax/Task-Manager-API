@@ -1,7 +1,4 @@
-package com.maxim.taskmanagerapi.Tasks;
-
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+package com.maxim.taskmanagerapi.TaskLogic.Tasks;
 
 import java.util.HashMap;
 import java.util.Map;

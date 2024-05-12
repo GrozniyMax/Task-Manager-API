@@ -1,10 +1,9 @@
-package com.maxim.taskmanagerapi.TaskManagers;
+package com.maxim.taskmanagerapi.TaskLogic.TaskManagers;
 
 
-import com.maxim.taskmanagerapi.Tasks.Task;
+import com.maxim.taskmanagerapi.TaskLogic.Tasks.Task;
 
 import java.util.List;
-import java.util.Map;
 
 public interface TaskManager {
 

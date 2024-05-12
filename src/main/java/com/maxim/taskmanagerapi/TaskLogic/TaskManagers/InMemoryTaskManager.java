@@ -1,9 +1,8 @@
-package com.maxim.taskmanagerapi.TaskManagers;
+package com.maxim.taskmanagerapi.TaskLogic.TaskManagers;
 
 
-import com.maxim.taskmanagerapi.Tasks.SimpleTask;
-import com.maxim.taskmanagerapi.Tasks.Task;
-import org.springframework.context.annotation.Bean;
+import com.maxim.taskmanagerapi.TaskLogic.Tasks.SimpleTask;
+import com.maxim.taskmanagerapi.TaskLogic.Tasks.Task;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
