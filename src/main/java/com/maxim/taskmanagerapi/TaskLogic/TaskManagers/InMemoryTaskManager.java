@@ -15,7 +15,6 @@ import java.util.Map;
  */
 
 @Component
-@Profile("test")
 public class InMemoryTaskManager implements TaskManager {
 
     private Map<Long, Task> tasks = new HashMap<>();

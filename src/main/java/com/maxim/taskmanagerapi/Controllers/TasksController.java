@@ -1,6 +1,8 @@
 package com.maxim.taskmanagerapi.Controllers;
 
 
+import com.maxim.taskmanagerapi.DataBaseLogic.UserTableLogic.UserDAO;
+import com.maxim.taskmanagerapi.DataBaseLogic.UserTableLogic.UserRepo;
 import com.maxim.taskmanagerapi.TaskLogic.TaskManagers.TaskManager;
 import com.maxim.taskmanagerapi.TaskLogic.Tasks.ComplexTask;
 import com.maxim.taskmanagerapi.TaskLogic.Tasks.Task;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tasks")
@@ -17,6 +20,9 @@ public class TasksController {
 
     @Autowired
     TaskManager taskManager;
+
+    @Autowired
+    UserRepo userRepository;
 
     @GetMapping("/")
     public List<Task> getTasks() {
@@ -47,6 +53,13 @@ public class TasksController {
     @GetMapping("/{id}/subtasks")
     public Map<Long,List<Task>> getSubTasks(@PathVariable Long id){
         return ((ComplexTask) taskManager.getTaskByID(id)).getSubTasksByLayer();
+    }
+
+    @GetMapping("/user")
+    public @ResponseBody UserDAO gg(){
+        Optional<UserDAO> optional =userRepository.findById(1L);
+        return optional.get();
+
     }
 
     @ExceptionHandler(ClassCastException.class)
