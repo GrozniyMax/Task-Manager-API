@@ -1,4 +1,4 @@
-package com.maxim.taskmanagerapi.TaskLogic.Tasks;
+package com.maxim.taskmanagerapi.Entities.Tasks.Common;
 
 /**
  * Class represents status of task

@@ -1,5 +1,6 @@
-package com.maxim.taskmanagerapi.DataBaseLogic.UserTableLogic;
+package com.maxim.taskmanagerapi.DataBaseLogic.Repositories;
 
+import com.maxim.taskmanagerapi.Entities.Users.UserDAO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;

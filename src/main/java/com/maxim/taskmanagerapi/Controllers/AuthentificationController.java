@@ -1,11 +1,10 @@
 package com.maxim.taskmanagerapi.Controllers;
 
-import com.maxim.taskmanagerapi.DataBaseLogic.UserTableLogic.UserDAO;
-import com.maxim.taskmanagerapi.DataBaseLogic.UserTableLogic.UserRepo;
+import com.maxim.taskmanagerapi.Entities.Users.UserDAO;
+import com.maxim.taskmanagerapi.DataBaseLogic.Repositories.UserRepo;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 /**

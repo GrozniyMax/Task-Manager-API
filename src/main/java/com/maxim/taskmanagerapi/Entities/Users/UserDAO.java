@@ -1,4 +1,4 @@
-package com.maxim.taskmanagerapi.DataBaseLogic.UserTableLogic;
+package com.maxim.taskmanagerapi.Entities.Users;
 
 
 import jakarta.persistence.*;

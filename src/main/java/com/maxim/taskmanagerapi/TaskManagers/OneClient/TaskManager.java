@@ -1,7 +1,7 @@
-package com.maxim.taskmanagerapi.TaskLogic.TaskManagers;
+package com.maxim.taskmanagerapi.TaskManagers.OneClient;
 
 
-import com.maxim.taskmanagerapi.TaskLogic.Tasks.Task;
+import com.maxim.taskmanagerapi.Entities.Tasks.DTOs.TaskDTO;
 
 import java.util.List;
 
@@ -17,17 +17,17 @@ public interface TaskManager {
      * @throws if task not found
      */
     //TODO specify checked exception
-    public Task getTaskByID(Long id);
+    public TaskDTO getTaskByID(Long id);
 
     /**
      * <p>If task not exists than add it</p>
      * <p>Else replaces task with given</p>
-     * @param task given task
+     * @param taskDTO given task
      */
-    public void add(Task task);
+    public void add(TaskDTO taskDTO);
 
-    public void update(Long id, Task task);
+    public void update(Long id, TaskDTO taskDTO);
 
-    public List<Task> getTasks();
+    public List<TaskDTO> getTasks();
 
 }
