@@ -2,15 +2,22 @@ package com.maxim.taskmanagerapi.TaskManagers.MultiClients;
 
 import com.maxim.taskmanagerapi.DataBaseLogic.Repositories.AttributesRepo;
 import com.maxim.taskmanagerapi.DataBaseLogic.Repositories.TaskRepo;
+import com.maxim.taskmanagerapi.DataBaseLogic.Repositories.UserRepo;
 import com.maxim.taskmanagerapi.Entities.TaskAdapter;
 import com.maxim.taskmanagerapi.Entities.Tasks.DTOs.TaskDTO;
-import com.maxim.taskmanagerapi.TaskManagers.OneClient.TaskManager;
+import com.maxim.taskmanagerapi.Entities.Users.UserDAO;
+import com.maxim.taskmanagerapi.Entities.Users.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@Component
 public class DataBaseTaskManager implements TaskManager {
+
+    @Autowired
+    private UserRepo userRepo;
 
     @Autowired
     private TaskRepo taskRepo;
@@ -36,11 +43,10 @@ public class DataBaseTaskManager implements TaskManager {
         var obj = TaskAdapter.toDAO(taskDTO);
         obj.setId(newId);
         taskRepo.saveAndFlush(obj);
-
     }
 
     @Override
-    public List<TaskDTO> getTasks() {
-        return List.of();
+    public List<TaskDTO> getTasks(UserDAO user) {
+        return taskRepo.findByOwnerId(user).stream().map(TaskAdapter::toDTO).toList();
     }
 }
