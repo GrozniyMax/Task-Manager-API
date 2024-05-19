@@ -2,7 +2,9 @@ package com.maxim.taskmanagerapi.Entities.Users;
 
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Basic class for user from table users
@@ -11,6 +13,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
+@Setter
+@EqualsAndHashCode
 public class UserDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

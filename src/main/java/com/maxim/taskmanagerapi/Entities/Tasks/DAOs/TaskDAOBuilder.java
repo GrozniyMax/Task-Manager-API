@@ -69,6 +69,7 @@ public class TaskDAOBuilder implements TaskBuilder {
         return this;
     }
 
+
     public TaskDAO build() {
         if (!labelSet) throw new NotYetReadyException(null);
         return taskDAO;

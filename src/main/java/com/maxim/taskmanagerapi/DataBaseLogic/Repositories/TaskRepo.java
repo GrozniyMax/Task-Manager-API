@@ -2,7 +2,7 @@ package com.maxim.taskmanagerapi.DataBaseLogic.Repositories;
 
 import com.maxim.taskmanagerapi.Entities.Users.UserDAO;
 import com.maxim.taskmanagerapi.Entities.Tasks.DAOs.TaskDAO;
-import com.maxim.taskmanagerapi.Entities.TaskAdapter;
+import com.maxim.taskmanagerapi.Entities.Tasks.Common.TaskAdapter;
 import com.maxim.taskmanagerapi.Entities.Tasks.DTOs.TaskDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

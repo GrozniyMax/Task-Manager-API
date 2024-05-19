@@ -3,6 +3,7 @@ package com.maxim.taskmanagerapi.TaskManagers.OneClient;
 
 import com.maxim.taskmanagerapi.Entities.Tasks.DTOs.SimpleTaskDTO;
 import com.maxim.taskmanagerapi.Entities.Tasks.DTOs.TaskDTO;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

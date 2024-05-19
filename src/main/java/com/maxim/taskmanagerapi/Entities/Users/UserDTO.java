@@ -1,4 +1,5 @@
 package com.maxim.taskmanagerapi.Entities.Users;
 
-public class UserDTO {
+public record UserDTO(String login,String password) {
+
 }

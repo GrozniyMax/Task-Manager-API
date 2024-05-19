@@ -2,14 +2,12 @@ package com.maxim.taskmanagerapi.TaskManagers.OneClient;
 
 
 import com.maxim.taskmanagerapi.Entities.Tasks.DTOs.TaskDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface TaskManager {
-
-
-
-
     /**
      * Finds task by id
      * @param id given task
